@@ -1,0 +1,89 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 3,
+  "summary": "Interactive romantic-themed single-purpose Valentine web page (HTML/CSS/JS) for iPad Chrome, with Yes/No options where No evades hover and Yes shows a meme image/message.",
+  "existing_features": [
+    {
+      "id": "feature-create-a-single-page-romantic-valentine-prompt-screen-that-asks-will-you-be-my-valentine-and-shows-exactly-two-options-yes-and-no",
+      "title": "Create a single-page romantic Valentine prompt screen that asks: \"Will you be my Valentine?\" and shows exactly two options: \"Yes\" and \"No\".",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-an-evasive-no-option-that-moves-away-when-the-user-attempts-to-interact-with-it-preventing-it-from-being-clicked-support-both-mouse-trackpad-and-ipad-touch-interactions",
+      "title": "Implement an evasive \"No\" option that moves away when the user attempts to interact with it, preventing it from being clicked (support both mouse/trackpad and iPad touch interactions).",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-when-the-user-clicks-yes-replace-the-prompt-ui-with-a-result-view-that-displays-a-meme-image-containing-the-text-good-choice-doctor-zara-ji-exact-casing-and-spacing-preserved-as-provided-and-hide-disable-the-yes-no-options",
+      "title": "When the user clicks \"Yes\", replace the prompt UI with a result view that displays a meme image containing the text: \"Good Choice Doctor Zara Ji\" (exact casing and spacing preserved as provided), and hide/disable the Yes/No options.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-a-cohesive-romantic-theme-using-a-pink-and-white-color-scheme-across-the-layout-typography-buttons-and-background-optimized-for-ipad-chrome-responsive-centered-content-comfortable-touch-targets",
+      "title": "Apply a cohesive romantic theme using a pink-and-white color scheme across the layout, typography, buttons, and background, optimized for iPad Chrome (responsive, centered content, comfortable touch targets).",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-the-generated-meme-image-to-the-frontend-as-a-static-asset-under-frontend-public-assets-generated-and-load-it-directly-from-the-frontend-do-not-fetch-the-image-via-the-backend",
+      "title": "Add the generated meme image to the frontend as a static asset under frontend/public/assets/generated and load it directly from the frontend (do not fetch the image via the backend).",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Build a simple romantic-themed interactive Valentine web page that asks 'Will you be my Valentine?' with Yes/No options, runnable in iPad Chrome using HTML/CSS/JS.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Make the 'No' option move away on hover so it cannot be clicked (forces clicking 'Yes').",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "On clicking 'Yes', display a meme image/message: \"Good Choice Doctor Zara Ji\".",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Apply a romantic pink-and-white theme to the page UI.",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "architectural_notes": [],
+  "known_issues": [],
+  "isFixRequest": false,
+  "imageRequirements": "## Required Images\n- Square meme-style image with the overlaid text \"Good Choice Doctor Zara Ji\" in bold, high-contrast lettering on a humorous romantic backdrop (meme-good-choice.dim_800x800.png)",
+  "generatedImages": [
+    {
+      "filename": "meme-good-choice.dim_800x800.png",
+      "description": "Square meme-style image with the overlaid text \"Good Choice Doctor Zara Ji\" in bold, high-contrast lettering on a humorous romantic backdrop",
+      "targetWidth": 800,
+      "targetHeight": 800
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Romantic Valentine one-page interaction with evasive No button and Yes reveal meme",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

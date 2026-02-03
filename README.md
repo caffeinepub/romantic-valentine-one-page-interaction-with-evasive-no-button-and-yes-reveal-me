@@ -1,2 +1,3 @@
-# romantic-valentine-one-page-interaction-with-evasive-no-button-and-yes-reveal-me
-Exported from Caffeine project: Romantic Valentine one-page interaction with evasive No button and Yes reveal meme
+## Romantic Valentine one-page interaction with evasive No button and Yes reveal meme
+
+To run app build and run docker image: `docker build -t app . docker run -it --network host app`

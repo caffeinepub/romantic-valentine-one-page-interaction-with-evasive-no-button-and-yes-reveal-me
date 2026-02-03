@@ -1,0 +1,5 @@
+{
+  "frontend/src/App.tsx": "Main Valentine's Day interactive page component with state management for Yes/No interaction, evasive No button positioning logic for both pointer and touch events, and conditional rendering for the success view with meme image.",
+  "frontend/src/index.css": "Global styles with romantic pink and white OKLCH color system, custom utility classes for romantic theme colors, and typography configuration using Inter font family.",
+  "frontend/tailwind.config.js": "Tailwind configuration extended with romantic color palette tokens, Inter font family, and custom design system for the Valentine's Day theme."
+}

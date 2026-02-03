@@ -1,0 +1,14 @@
+{
+  "backend/main.mo": "Defines an empty Motoko actor, serving as a placeholder backend canister with no exposed methods.",
+  "feature_evidence.json": "Machine-readable report mapping implemented Valentine UI features to source files, components, test IDs, and confidence levels.",
+  "frontend-file-summaries.txt": "Prewritten summaries describing the purpose of key frontend files such as App.tsx, global CSS, and Tailwind configuration.",
+  "frontend/index.css": "Global Tailwind CSS base file defining extensive CSS variables for light/dark themes, layout tokens, and default background and text styles.",
+  "frontend/index.html": "HTML entry point that sets metadata, page title, and mounts the React application at the root element.",
+  "frontend/src/App.tsx": "Main React component implementing the Valentine prompt UI, evasive No button logic, Yes confirmation flow, and final meme display with romantic styling.",
+  "frontend/src/hooks/useActor.ts": "React hook that creates and caches a backend actor using React Query, handling authenticated and anonymous identities and invalidating dependent queries on change.",
+  "frontend/src/hooks/useInternetIdentity.ts": "Authentication context and provider for Internet Identity, managing login state, identity persistence, and integration with the Dfinity AuthClient.",
+  "frontend/src/index.css": "Tailwind CSS file defining a romantic pink-and-white design system with custom OKLCH color tokens, dark mode variants, and utility classes.",
+  "frontend/src/main.tsx": "Frontend bootstrap file that renders the React app, wiring up React Query and Internet Identity providers and importing global styles.",
+  "frontend/tailwind.config.js": "Tailwind CSS configuration enabling class-based dark mode, scanning frontend source files, and extending the theme with custom containers, fonts, shadows, animations, and a large set of OKLCH-based design tokens (including romantic and sidebar color palettes).",
+  "project_state.json": "Machine-readable snapshot of the project’s requirements and progress, describing a romantic Valentine single-page web app with Yes/No interactions, theming, and static meme asset handling, plus pending feature requests and image requirements."
+}

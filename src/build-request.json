@@ -1,0 +1,108 @@
+{
+  "kind": "build_request",
+  "title": "Romantic Valentine one-page interaction with evasive No button and Yes reveal meme",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Create a single-page romantic Valentine prompt screen that asks: \"Will you be my Valentine?\" and shows exactly two options: \"Yes\" and \"No\".",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Create an interactive web page... have only one purpose: to ask her to be my Valentine.\nThere should be two options: Yes or No."
+        ]
+      },
+      "acceptanceCriteria": [
+        "On initial load, the page shows the question text \"Will you be my Valentine?\" and two clearly visible buttons labeled \"Yes\" and \"No\".",
+        "There are no additional flows, menus, or unrelated content on the initial screen."
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Implement an evasive \"No\" option that moves away when the user attempts to interact with it, preventing it from being clicked (support both mouse/trackpad and iPad touch interactions).",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "When she hovers her cursor over No, it should move away so she cannot click it, forcing her to click only on Yes."
+        ]
+      },
+      "acceptanceCriteria": [
+        "When the pointer hovers over (or approaches) the \"No\" button, the button repositions to a different spot on the screen.",
+        "On touch devices (e.g., iPad), attempting to tap the \"No\" button causes it to move before the tap can activate a click action.",
+        "The \"No\" button cannot be successfully clicked/activated through normal interaction."
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "text": "When the user clicks \"Yes\", replace the prompt UI with a result view that displays a meme image containing the text: \"Good Choice Doctor Zara Ji\" (exact casing and spacing preserved as provided), and hide/disable the Yes/No options.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "When she clicks Yes, show her a meme image telling her \"Good Choice Doctor Zara Ji  \"."
+        ]
+      },
+      "acceptanceCriteria": [
+        "Clicking \"Yes\" shows a meme image and no longer shows the two-option prompt.",
+        "The displayed meme image includes the text \"Good Choice Doctor Zara Ji\".",
+        "The \"No\" evasive behavior is no longer relevant/visible after \"Yes\" is clicked."
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "text": "Apply a cohesive romantic theme using a pink-and-white color scheme across the layout, typography, buttons, and background, optimized for iPad Chrome (responsive, centered content, comfortable touch targets).",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "The page should be themed romantically with a pink and white color scheme and be fully interactive ... run it on my iPad using Chrome."
+        ]
+      },
+      "acceptanceCriteria": [
+        "Primary UI uses pink and white as dominant colors (background, accents, buttons).",
+        "Buttons are large enough for touch (no tiny tap targets) and layout adapts to tablet viewport sizes without overflow or clipped content.",
+        "Overall styling remains simple and romantic (consistent fonts, spacing, and visual hierarchy)."
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "text": "Add the generated meme image to the frontend as a static asset under frontend/public/assets/generated and load it directly from the frontend (do not fetch the image via the backend).",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ]
+      },
+      "acceptanceCriteria": [
+        "A generated image file exists at frontend/public/assets/generated and is referenced by the UI after clicking \"Yes\".",
+        "The app does not require backend endpoints to display the meme image."
+      ]
+    }
+  ],
+  "constraints": [
+    "Use English for any user-facing text.",
+    "Do not modify files under frontend/src/components/ui or the immutable hook/entry paths listed in SYSTEM_CONTEXT.",
+    "Backend changes are not required for this feature set."
+  ],
+  "nonGoals": [
+    "Internet Identity authentication or any login flow",
+    "Persisting user interaction state in the backend",
+    "Additional pages beyond the single Valentine prompt and the post-Yes result view"
+  ],
+  "imageRequirements": {
+    "required": [
+      "Square meme-style image with the overlaid text \"Good Choice Doctor Zara Ji\" in bold, high-contrast lettering on a humorous romantic backdrop (meme-good-choice.dim_800x800.png)"
+    ],
+    "edits": []
+  }
+}

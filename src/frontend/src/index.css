@@ -1,0 +1,174 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --radius: 1rem;
+        
+        /* Romantic pink and white theme */
+        --romantic-primary: 0.65 0.22 350;
+        --romantic-primary-dark: 0.55 0.25 350;
+        --romantic-accent: 0.75 0.18 340;
+        --romantic-light: 0.95 0.08 350;
+        --romantic-lighter: 0.98 0.04 350;
+        --romantic-dark: 0.25 0.15 350;
+        --romantic-muted: 0.50 0.12 350;
+        --romantic-border: 0.90 0.10 350;
+        
+        --background: 1 0 0;
+        --foreground: 0.145 0 0;
+        --card: 1 0 0;
+        --card-foreground: 0.145 0 0;
+        --popover: 1 0 0;
+        --popover-foreground: 0.145 0 0;
+        --primary: 0.65 0.22 350;
+        --primary-foreground: 0.985 0 0;
+        --secondary: 0.95 0.08 350;
+        --secondary-foreground: 0.25 0.15 350;
+        --muted: 0.95 0.08 350;
+        --muted-foreground: 0.50 0.12 350;
+        --accent: 0.75 0.18 340;
+        --accent-foreground: 0.985 0 0;
+        --destructive: 0.577 0.245 27.325;
+        --destructive-foreground: 0.985 0 0;
+        --border: 0.90 0.10 350;
+        --input: 0.90 0.10 350;
+        --ring: 0.65 0.22 350;
+        --chart-1: 0.646 0.222 41.116;
+        --chart-2: 0.6 0.118 184.704;
+        --chart-3: 0.398 0.07 227.392;
+        --chart-4: 0.828 0.189 84.429;
+        --chart-5: 0.769 0.188 70.08;
+        --sidebar: 0.985 0 0;
+        --sidebar-foreground: 0.145 0 0;
+        --sidebar-primary: 0.65 0.22 350;
+        --sidebar-primary-foreground: 0.985 0 0;
+        --sidebar-accent: 0.95 0.08 350;
+        --sidebar-accent-foreground: 0.25 0.15 350;
+        --sidebar-border: 0.90 0.10 350;
+        --sidebar-ring: 0.65 0.22 350;
+    }
+
+    .dark {
+        --romantic-primary: 0.70 0.20 350;
+        --romantic-primary-dark: 0.60 0.23 350;
+        --romantic-accent: 0.65 0.16 340;
+        --romantic-light: 0.30 0.12 350;
+        --romantic-lighter: 0.25 0.10 350;
+        --romantic-dark: 0.90 0.08 350;
+        --romantic-muted: 0.60 0.10 350;
+        --romantic-border: 0.40 0.12 350;
+        
+        --background: 0.145 0 0;
+        --foreground: 0.985 0 0;
+        --card: 0.205 0 0;
+        --card-foreground: 0.985 0 0;
+        --popover: 0.269 0 0;
+        --popover-foreground: 0.985 0 0;
+        --primary: 0.70 0.20 350;
+        --primary-foreground: 0.985 0 0;
+        --secondary: 0.30 0.12 350;
+        --secondary-foreground: 0.985 0 0;
+        --muted: 0.30 0.12 350;
+        --muted-foreground: 0.60 0.10 350;
+        --accent: 0.65 0.16 340;
+        --accent-foreground: 0.985 0 0;
+        --destructive: 0.704 0.191 22.216;
+        --destructive-foreground: 0.205 0 0;
+        --border: 1 0 0 / 10%;
+        --input: 1 0 0 / 15%;
+        --ring: 0.556 0 0;
+        --chart-1: 0.488 0.243 264.376;
+        --chart-2: 0.696 0.17 162.48;
+        --chart-3: 0.769 0.188 70.08;
+        --chart-4: 0.627 0.265 303.9;
+        --chart-5: 0.645 0.246 16.439;
+        --sidebar: 0.205 0 0;
+        --sidebar-foreground: 0.985 0 0;
+        --sidebar-primary: 0.70 0.20 350;
+        --sidebar-primary-foreground: 0.985 0 0;
+        --sidebar-accent: 0.30 0.12 350;
+        --sidebar-accent-foreground: 0.985 0 0;
+        --sidebar-border: 1 0 0 / 10%;
+        --sidebar-ring: 0.439 0 0;
+    }
+
+    * {
+        @apply border-border;
+    }
+    body {
+        @apply bg-background text-foreground;
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+    }
+}
+
+@layer utilities {
+    .text-romantic-primary {
+        color: oklch(var(--romantic-primary));
+    }
+    .text-romantic-primary-dark {
+        color: oklch(var(--romantic-primary-dark));
+    }
+    .text-romantic-accent {
+        color: oklch(var(--romantic-accent));
+    }
+    .text-romantic-light {
+        color: oklch(var(--romantic-light));
+    }
+    .text-romantic-lighter {
+        color: oklch(var(--romantic-lighter));
+    }
+    .text-romantic-dark {
+        color: oklch(var(--romantic-dark));
+    }
+    .text-romantic-muted {
+        color: oklch(var(--romantic-muted));
+    }
+    .text-romantic-border {
+        color: oklch(var(--romantic-border));
+    }
+    
+    .bg-romantic-primary {
+        background-color: oklch(var(--romantic-primary));
+    }
+    .bg-romantic-primary-dark {
+        background-color: oklch(var(--romantic-primary-dark));
+    }
+    .bg-romantic-accent {
+        background-color: oklch(var(--romantic-accent));
+    }
+    .bg-romantic-light {
+        background-color: oklch(var(--romantic-light));
+    }
+    .bg-romantic-lighter {
+        background-color: oklch(var(--romantic-lighter));
+    }
+    .bg-romantic-dark {
+        background-color: oklch(var(--romantic-dark));
+    }
+    .bg-romantic-muted {
+        background-color: oklch(var(--romantic-muted));
+    }
+    .bg-romantic-border {
+        background-color: oklch(var(--romantic-border));
+    }
+    
+    .border-romantic-primary {
+        border-color: oklch(var(--romantic-primary));
+    }
+    .border-romantic-border {
+        border-color: oklch(var(--romantic-border));
+    }
+    
+    .fill-romantic-primary {
+        fill: oklch(var(--romantic-primary));
+    }
+    .fill-romantic-accent {
+        fill: oklch(var(--romantic-accent));
+    }
+    
+    .shadow-romantic-primary\/50 {
+        box-shadow: 0 20px 50px -12px oklch(var(--romantic-primary) / 0.5);
+    }
+}
