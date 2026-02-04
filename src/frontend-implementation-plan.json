@@ -1,93 +1,46 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "Valentine one-page prompt with evasive No and Yes meme reveal",
+  "title": "Custom domain guidance UI + documentation for IC-hosted Valentine page",
   "requirements": [
     {
       "id": "REQ-1",
-      "summary": "Create a single Valentine prompt screen with the question and exactly two options: Yes and No.",
+      "summary": "Add an in-app “Custom domain” view with a persisted domain input, display the current canister URL, and provide copy-to-clipboard for the URL and DNS values with clear English setup steps.",
       "acceptanceCriteria": [
-        "On initial load, the page shows the question text \"Will you be my Valentine?\" and two clearly visible buttons labeled \"Yes\" and \"No\".",
-        "There are no additional flows, menus, or unrelated content on the initial screen."
+        "The UI includes an input for a domain name and stores it locally so it persists on refresh.",
+        "The UI displays the current IC app URL (canister URL) used to access the deployed site and provides a one-click copy action.",
+        "All user-facing text in this view is in English."
       ],
       "file_operations": [
         {
           "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add a “Custom domain” setup view (as an in-app panel/modal/section to avoid new routing) that: (1) lets the user enter a domain name and persists it via localStorage, (2) reads and displays the current deployed canister URL from the runtime location (e.g., window.location.origin) with a one-click copy action, and (3) shows provider-agnostic, step-by-step DNS instructions including copy-to-clipboard for the computed DNS target/values (e.g., hostname derived from the canister URL). Use shadcn-ui components (e.g., Button plus Input/Card/Separator as appropriate) to structure the view and actions; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/hooks/useLocalStorage.ts",
           "operation": "create",
-          "description": "Implement the single-page Valentine prompt UI that renders the question text and exactly two buttons (\"Yes\" and \"No\") as the only interactive options on initial load."
+          "description": "Create a small reusable hook to read/write a string value to localStorage (domain name) with safe defaults and SSR-safe guards, so the custom domain input persists across refreshes."
         }
       ]
     },
     {
       "id": "REQ-2",
-      "summary": "Make the No option evade interaction for both pointer (mouse/trackpad) and iPad touch so it cannot be activated.",
+      "summary": "Add repository documentation under the frontend folder explaining custom domain DNS setup for an IC-hosted frontend, including propagation expectations and troubleshooting.",
       "acceptanceCriteria": [
-        "When the pointer hovers over (or approaches) the \"No\" button, the button repositions to a different spot on the screen.",
-        "On touch devices (e.g., iPad), attempting to tap the \"No\" button causes it to move before the tap can activate a click action.",
-        "The \"No\" button cannot be successfully clicked/activated through normal interaction."
+        "Documentation is written in English and is specific enough that a user can follow it without needing additional context from the chat.",
+        "Documentation includes a short troubleshooting section (e.g., DNS propagation time, HTTPS/certificate expectations, and common misconfiguration symptoms)."
       ],
       "file_operations": [
         {
-          "path": "frontend/src/App.tsx",
-          "operation": "modify",
-          "description": "Add evasive positioning logic for the \"No\" button (e.g., randomized reposition within a bounded container) and handle both pointer and touch interactions (including onPointerEnter/onPointerMove and onPointerDown/onTouchStart equivalents) to move it before activation and prevent successful clicks."
-        }
-      ]
-    },
-    {
-      "id": "REQ-3",
-      "summary": "On Yes click, replace the prompt with a meme image result view and remove the Yes/No UI.",
-      "acceptanceCriteria": [
-        "Clicking \"Yes\" shows a meme image and no longer shows the two-option prompt.",
-        "The displayed meme image includes the text \"Good Choice Doctor Zara Ji\".",
-        "The \"No\" evasive behavior is no longer relevant/visible after \"Yes\" is clicked."
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/App.tsx",
-          "operation": "modify",
-          "description": "Add state-driven UI switching so clicking \"Yes\" replaces the prompt with a result view that renders the static meme image and hides/disables the Yes/No buttons (and therefore the \"No\" evasive behavior)."
-        }
-      ]
-    },
-    {
-      "id": "REQ-4",
-      "summary": "Apply a cohesive pink-and-white romantic theme with responsive, centered layout and touch-friendly controls for iPad Chrome.",
-      "acceptanceCriteria": [
-        "Primary UI uses pink and white as dominant colors (background, accents, buttons).",
-        "Buttons are large enough for touch (no tiny tap targets) and layout adapts to tablet viewport sizes without overflow or clipped content.",
-        "Overall styling remains simple and romantic (consistent fonts, spacing, and visual hierarchy)."
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/index.css",
+          "path": "frontend/README.md",
           "operation": "create",
-          "description": "Create global styles (including Tailwind base directives if used by the project) to establish a pink-and-white romantic theme (background, typography defaults) and ensure the app has a consistent visual baseline."
+          "description": "Create a frontend-level README that includes a clearly labeled “Custom domain setup” section and links to a dedicated docs page. Keep instructions provider-agnostic while explicitly describing which DNS record types/values to create and what URL(s) should work after propagation."
         },
         {
-          "path": "frontend/src/App.tsx",
-          "operation": "modify",
-          "description": "Apply responsive layout styling (centered container, comfortable spacing) and touch-friendly button sizing/contrast optimized for iPad Chrome while keeping the UI limited to the prompt and result view."
-        }
-      ]
-    },
-    {
-      "id": "REQ-5",
-      "summary": "Include the generated meme image as a static frontend asset and load it directly from the frontend after Yes is clicked.",
-      "acceptanceCriteria": [
-        "A generated image file exists at frontend/public/assets/generated and is referenced by the UI after clicking \"Yes\".",
-        "The app does not require backend endpoints to display the meme image."
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/public/assets/generated/meme-good-choice.dim_800x800.png",
+          "path": "frontend/docs/custom-domain.md",
           "operation": "create",
-          "description": "Add the provided generated meme image asset at frontend/public/assets/generated/meme-good-choice.dim_800x800.png for direct static serving by the frontend."
-        },
-        {
-          "path": "frontend/src/App.tsx",
-          "operation": "modify",
-          "description": "Reference and render the static asset frontend/public/assets/generated/meme-good-choice.dim_800x800.png in the post-Yes result view (no backend fetching)."
+          "description": "Add a detailed custom-domain guide for an Internet Computer-hosted frontend covering: selecting apex vs subdomain, creating the appropriate DNS records (e.g., CNAME for a subdomain to the canister host; apex options like ALIAS/ANAME or redirect-to-subdomain), what to expect after DNS propagation, and a troubleshooting section (propagation delays, HTTPS/certificate timing/expectations, and common misconfiguration symptoms)."
         }
       ]
     }

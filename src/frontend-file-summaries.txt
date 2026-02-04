@@ -1,5 +1,9 @@
 {
-  "frontend/src/App.tsx": "Main Valentine's Day interactive page component with state management for Yes/No interaction, evasive No button positioning logic for both pointer and touch events, and conditional rendering for the success view with meme image.",
+  "frontend/src/App.tsx": "Valentine's Day interactive page with Yes/No buttons, evasive No button, success view with romantic GIF, and a settings button that opens the custom domain configuration panel.",
   "frontend/src/index.css": "Global styles with romantic pink and white OKLCH color system, custom utility classes for romantic theme colors, and typography configuration using Inter font family.",
-  "frontend/tailwind.config.js": "Tailwind configuration extended with romantic color palette tokens, Inter font family, and custom design system for the Valentine's Day theme."
+  "frontend/tailwind.config.js": "Tailwind configuration extended with romantic color palette tokens, Inter font family, and custom design system for the Valentine's Day theme.",
+  "frontend/src/components/CustomDomainPanel.tsx": "Dialog component for custom domain setup that displays the current IC URL, accepts domain input with localStorage persistence, shows DNS configuration instructions with copy-to-clipboard functionality, and provides guidance for both subdomain and apex domain setups.",
+  "frontend/src/hooks/useLocalStorage.ts": "Custom React hook for persisting state in localStorage with SSR-safe guards, automatic synchronization across browser tabs, and error handling.",
+  "frontend/README.md": "Frontend documentation with project overview, custom domain setup summary, development instructions, technology stack, and project structure.",
+  "frontend/docs/custom-domain.md": "Comprehensive guide for setting up custom domains on Internet Computer applications, including step-by-step DNS configuration instructions for various providers, troubleshooting section, propagation timing, best practices, and security considerations."
 }

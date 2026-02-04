@@ -2,10 +2,11 @@
   "kind": "feature_evidence_report",
   "features": [
     {
-      "featureId": "feature-create-a-single-page-romantic-valentine-prompt-screen-that-asks-will-you-be-my-valentine-and-shows-exactly-two-options-yes-and-no",
-      "featureTitle": "Create a single-page romantic Valentine prompt screen that asks: \"Will you be my Valentine?\" and shows exactly two options: \"Yes\" and \"No\".",
+      "featureId": "feature-add-a-custom-domain-setup-view-in-the-frontend-that-lets-the-user-enter-a-domain-name-e-g-example-com-and-displays-clear-step-by-step-instructions-for-pointing-that-domain-to-the-currently-deployed-internet-computer-app-url-canister-url-including-showing-the-current-canister-url-and-providing-copy-to-clipboard-for-the-url-and-any-dns-values-shown",
+      "featureTitle": "Add a “Custom domain” setup view in the frontend that lets the user enter a domain name (e.g., example.com) and displays clear, step-by-step instructions for pointing that domain to the currently deployed Internet Computer app URL (canister URL), including showing the current canister URL and providing copy-to-clipboard for the URL and any DNS values shown.",
       "files": [
-        "frontend/src/App.tsx"
+        "frontend/src/App.tsx",
+        "frontend/src/hooks/useLocalStorage.ts"
       ],
       "components": [
         "core-infrastructure@1.0.2",
@@ -20,10 +21,11 @@
       "confidence": "high"
     },
     {
-      "featureId": "feature-implement-an-evasive-no-option-that-moves-away-when-the-user-attempts-to-interact-with-it-preventing-it-from-being-clicked-support-both-mouse-trackpad-and-ipad-touch-interactions",
-      "featureTitle": "Implement an evasive \"No\" option that moves away when the user attempts to interact with it, preventing it from being clicked (support both mouse/trackpad and iPad touch interactions).",
+      "featureId": "feature-add-repository-documentation-readme-section-or-a-new-docs-page-referenced-from-the-readme-describing-how-to-set-up-a-custom-domain-for-this-internet-computer-hosted-frontend-including-what-dns-records-the-user-must-create-and-where-they-should-expect-the-site-to-be-reachable-after-propagation-while-keeping-the-instructions-provider-agnostic",
+      "featureTitle": "Add repository documentation (README section or a new docs page referenced from the README) describing how to set up a custom domain for this Internet Computer-hosted frontend, including what DNS records the user must create and where they should expect the site to be reachable after propagation (while keeping the instructions provider-agnostic).",
       "files": [
-        "frontend/src/App.tsx"
+        "frontend/README.md",
+        "frontend/docs/custom-domain.md"
       ],
       "components": [
         "core-infrastructure@1.0.2",
@@ -34,61 +36,6 @@
       ],
       "testIds": [
         "REQ-2"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-when-the-user-clicks-yes-replace-the-prompt-ui-with-a-result-view-that-displays-a-meme-image-containing-the-text-good-choice-doctor-zara-ji-exact-casing-and-spacing-preserved-as-provided-and-hide-disable-the-yes-no-options",
-      "featureTitle": "When the user clicks \"Yes\", replace the prompt UI with a result view that displays a meme image containing the text: \"Good Choice Doctor Zara Ji\" (exact casing and spacing preserved as provided), and hide/disable the Yes/No options.",
-      "files": [
-        "frontend/src/App.tsx"
-      ],
-      "components": [
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-3"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-apply-a-cohesive-romantic-theme-using-a-pink-and-white-color-scheme-across-the-layout-typography-buttons-and-background-optimized-for-ipad-chrome-responsive-centered-content-comfortable-touch-targets",
-      "featureTitle": "Apply a cohesive romantic theme using a pink-and-white color scheme across the layout, typography, buttons, and background, optimized for iPad Chrome (responsive, centered content, comfortable touch targets).",
-      "files": [
-        "frontend/src/App.tsx",
-        "frontend/src/index.css"
-      ],
-      "components": [
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-4"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-add-the-generated-meme-image-to-the-frontend-as-a-static-asset-under-frontend-public-assets-generated-and-load-it-directly-from-the-frontend-do-not-fetch-the-image-via-the-backend",
-      "featureTitle": "Add the generated meme image to the frontend as a static asset under frontend/public/assets/generated and load it directly from the frontend (do not fetch the image via the backend).",
-      "files": [
-        "frontend/src/App.tsx"
-      ],
-      "components": [
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-5"
       ],
       "confidence": "high"
     }

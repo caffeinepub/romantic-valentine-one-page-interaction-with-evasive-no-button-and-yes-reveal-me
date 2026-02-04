@@ -1,45 +1,111 @@
 {
   "schemaVersion": "1.0.0",
-  "projectStateVersion": 3,
-  "summary": "Interactive romantic-themed single-purpose Valentine web page (HTML/CSS/JS) for iPad Chrome, with Yes/No options where No evades hover and Yes shows a meme image/message.",
+  "projectStateVersion": 24,
+  "summary": "Interactive romantic Valentine web page (HTML/CSS/JS) with Yes/No interaction (No evades hover), and on Yes shows a specific meme GIF (girl doctor + boy photographer), intended to run on iPad Chrome; user has chosen to set up a custom URL/domain (not just a shareable URL).",
   "existing_features": [
     {
-      "id": "feature-create-a-single-page-romantic-valentine-prompt-screen-that-asks-will-you-be-my-valentine-and-shows-exactly-two-options-yes-and-no",
-      "title": "Create a single-page romantic Valentine prompt screen that asks: \"Will you be my Valentine?\" and shows exactly two options: \"Yes\" and \"No\".",
+      "id": "IF-1",
+      "title": "Motoko backend canister scaffold",
+      "synonyms": [
+        "backend canister",
+        "Motoko canister"
+      ],
+      "description": "Backend canister implemented in Motoko with accompanying Candid interface and generated frontend declarations.",
+      "reqIds": [],
+      "version": 1
+    },
+    {
+      "id": "IF-2",
+      "title": "React + Vite frontend scaffold",
+      "synonyms": [
+        "frontend app",
+        "Vite React app"
+      ],
+      "description": "Frontend application scaffolded with React/TypeScript and Vite, including styling setup (Tailwind/index.css) and app entrypoints.",
+      "reqIds": [],
+      "version": 1
+    },
+    {
+      "id": "IF-3",
+      "title": "Internet Identity authentication integration",
+      "synonyms": [
+        "II auth",
+        "Internet Identity login"
+      ],
+      "description": "Frontend auth flow integrated with Internet Identity via dedicated hooks/utilities.",
+      "reqIds": [],
+      "version": 1
+    },
+    {
+      "id": "IF-4",
+      "title": "Typed canister actor integration",
+      "synonyms": [
+        "agent actor",
+        "useActor hook"
+      ],
+      "description": "Frontend includes typed canister bindings and an actor hook/utilities to call the backend canister from the UI.",
+      "reqIds": [],
+      "version": 1
+    },
+    {
+      "id": "IF-5",
+      "title": "shadcn/ui component library included",
+      "synonyms": [
+        "UI component set",
+        "shadcn components"
+      ],
+      "description": "Project includes a shadcn/ui-based component set (accordion, dialog, sidebar, etc.) and supporting utilities/config.",
+      "reqIds": [],
+      "version": 1
+    },
+    {
+      "id": "IF-6",
+      "title": "Build/deploy template tooling for ICP",
+      "synonyms": [
+        "build template",
+        "deploy scripts",
+        "Docker build template"
+      ],
+      "description": "Repository includes build-template assets (Dockerfile, deploy.sh, canister.yaml, workspace/package configs) and scripts for image processing/pruning.",
+      "reqIds": [],
+      "version": 1
+    },
+    {
+      "id": "IF-7",
+      "title": "Client-side storage utility",
+      "synonyms": [
+        "StorageClient",
+        "storage helper"
+      ],
+      "description": "Frontend includes a StorageClient utility for managing persisted client-side state.",
+      "reqIds": [],
+      "version": 1
+    },
+    {
+      "id": "IF-8",
+      "title": "GitHub export / ICP CLI build support",
+      "synonyms": [
+        "github export icp cli",
+        "icp.yaml workflow support",
+        "build.sh"
+      ],
+      "description": "Includes project-level build and configuration assets aimed at GitHub export and ICP CLI usage (e.g., build.sh and icp.yaml) alongside the existing build-template tooling.",
+      "reqIds": [],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-custom-domain-setup-view-in-the-frontend-that-lets-the-user-enter-a-domain-name-e-g-example-com-and-displays-clear-step-by-step-instructions-for-pointing-that-domain-to-the-currently-deployed-internet-computer-app-url-canister-url-including-showing-the-current-canister-url-and-providing-copy-to-clipboard-for-the-url-and-any-dns-values-shown",
+      "title": "Add a “Custom domain” setup view in the frontend that lets the user enter a domain name (e.g., example.com) and displays clear, step-by-step instructions for pointing that domain to the currently deployed Internet Computer app URL (canister URL), including showing the current canister URL and providing copy-to-clipboard for the URL and any DNS values shown.",
       "reqIds": [
         "REQ-1"
       ],
       "version": 1
     },
     {
-      "id": "feature-implement-an-evasive-no-option-that-moves-away-when-the-user-attempts-to-interact-with-it-preventing-it-from-being-clicked-support-both-mouse-trackpad-and-ipad-touch-interactions",
-      "title": "Implement an evasive \"No\" option that moves away when the user attempts to interact with it, preventing it from being clicked (support both mouse/trackpad and iPad touch interactions).",
+      "id": "feature-add-repository-documentation-readme-section-or-a-new-docs-page-referenced-from-the-readme-describing-how-to-set-up-a-custom-domain-for-this-internet-computer-hosted-frontend-including-what-dns-records-the-user-must-create-and-where-they-should-expect-the-site-to-be-reachable-after-propagation-while-keeping-the-instructions-provider-agnostic",
+      "title": "Add repository documentation (README section or a new docs page referenced from the README) describing how to set up a custom domain for this Internet Computer-hosted frontend, including what DNS records the user must create and where they should expect the site to be reachable after propagation (while keeping the instructions provider-agnostic).",
       "reqIds": [
         "REQ-2"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-when-the-user-clicks-yes-replace-the-prompt-ui-with-a-result-view-that-displays-a-meme-image-containing-the-text-good-choice-doctor-zara-ji-exact-casing-and-spacing-preserved-as-provided-and-hide-disable-the-yes-no-options",
-      "title": "When the user clicks \"Yes\", replace the prompt UI with a result view that displays a meme image containing the text: \"Good Choice Doctor Zara Ji\" (exact casing and spacing preserved as provided), and hide/disable the Yes/No options.",
-      "reqIds": [
-        "REQ-3"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-apply-a-cohesive-romantic-theme-using-a-pink-and-white-color-scheme-across-the-layout-typography-buttons-and-background-optimized-for-ipad-chrome-responsive-centered-content-comfortable-touch-targets",
-      "title": "Apply a cohesive romantic theme using a pink-and-white color scheme across the layout, typography, buttons, and background, optimized for iPad Chrome (responsive, centered content, comfortable touch targets).",
-      "reqIds": [
-        "REQ-4"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-add-the-generated-meme-image-to-the-frontend-as-a-static-asset-under-frontend-public-assets-generated-and-load-it-directly-from-the-frontend-do-not-fetch-the-image-via-the-backend",
-      "title": "Add the generated meme image to the frontend as a static asset under frontend/public/assets/generated and load it directly from the frontend (do not fetch the image via the backend).",
-      "reqIds": [
-        "REQ-5"
       ],
       "version": 1
     }
@@ -47,43 +113,32 @@
   "new_feature_requests": [
     {
       "id": "AR-1",
-      "summary": "Build a simple romantic-themed interactive Valentine web page that asks 'Will you be my Valentine?' with Yes/No options, runnable in iPad Chrome using HTML/CSS/JS.",
-      "reqIds": [],
-      "status": "pending"
-    },
-    {
-      "id": "AR-2",
-      "summary": "Make the 'No' option move away on hover so it cannot be clicked (forces clicking 'Yes').",
-      "reqIds": [],
-      "status": "pending"
-    },
-    {
-      "id": "AR-3",
-      "summary": "On clicking 'Yes', display a meme image/message: \"Good Choice Doctor Zara Ji\".",
-      "reqIds": [],
-      "status": "pending"
-    },
-    {
-      "id": "AR-4",
-      "summary": "Apply a romantic pink-and-white theme to the page UI.",
+      "summary": "Provide a shareable deployment URL and/or support setting up a custom URL/domain for the Valentine page",
       "reqIds": [],
       "status": "pending"
     }
   ],
-  "architectural_notes": [],
+  "architectural_notes": [
+    "Project is structured as an ICP dapp with separate backend (Motoko canister) and frontend (React/Vite) plus generated Candid/TypeScript declarations for typed calls.",
+    "Authentication uses Internet Identity and is surfaced in the frontend via dedicated hooks (e.g., useInternetIdentity) and actor wiring (e.g., useActor).",
+    "UI is built on shadcn/ui components with Tailwind/CSS configuration included.",
+    "Build/deployment is supported by a reusable build-template (Dockerfile, deploy script, canister configs) and helper scripts for asset/image maintenance.",
+    "Build-template now includes additional frontend quality/guardrails via custom ESLint rules (e.g., requiring Internet Identity provider wiring and avoiding BigInt usage in query keys).",
+    "Build-template frontend scaffold expanded with a broad set of shadcn/ui component implementations and supporting config (eslint/postcss/vite/tsconfig, components.json, env.json).",
+    "Repository includes additional project-level build/config assets to support GitHub export and ICP CLI-oriented workflows (e.g., build.sh and icp.yaml), complementing the existing build-template/deploy scripts."
+  ],
   "known_issues": [],
   "isFixRequest": false,
-  "imageRequirements": "## Required Images\n- Square meme-style image with the overlaid text \"Good Choice Doctor Zara Ji\" in bold, high-contrast lettering on a humorous romantic backdrop (meme-good-choice.dim_800x800.png)",
   "generatedImages": [
     {
-      "filename": "meme-good-choice.dim_800x800.png",
-      "description": "Square meme-style image with the overlaid text \"Good Choice Doctor Zara Ji\" in bold, high-contrast lettering on a humorous romantic backdrop",
+      "filename": "frontend/public/assets/generated/meme-good-choice-doctorsaab-v3.dim_800x800.gif",
+      "description": "Generated GIF image asset (v3) added to frontend public assets.",
       "targetWidth": 800,
       "targetHeight": 800
     }
   ],
   "gameProjectType": "none",
-  "projectName": "Romantic Valentine one-page interaction with evasive No button and Yes reveal meme",
+  "projectName": "Add custom domain setup guidance and domain input for the deployed Valentine page",
   "clarification_mode": "instant",
   "clarification_rounds": 0
 }
